@@ -8,7 +8,7 @@ public class FileWatchRoute extends RouteBuilder {
 	
 	@Override
 	public void configure() throws Exception {
-		from("file-watch:" + path + "?recursive=false")
+		from("file-watch:" + path + "?events=MODIFY")
 				.log("Evento: ${header.CamelFileEventType} Arquivo: ${header.CamelFileName}");
 	}
 
